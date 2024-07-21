@@ -6,17 +6,34 @@
     <title>Fanta Maria di Leuca</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #e0f7fa;
+            color: #333;
         }
 
         header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 10px 0;
+            background-color: #ffab00;
+            color: #fff;
+            padding: 15px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        header img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            height: auto;
         }
 
         nav ul {
@@ -32,9 +49,14 @@
         }
 
         nav ul li a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
         }
 
         main {
@@ -42,12 +64,25 @@
             text-align: center;
         }
 
+        .hero {
+            background: url('https://www.example.com/santa-maria-di-leuca.jpg') no-repeat center center/cover;
+            height: 300px;
+            border-radius: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
         section {
-            background-color: white;
+            background-color: #fff;
             margin: 20px auto;
             padding: 20px;
             border-radius: 10px;
-            max-width: 600px;
+            max-width: 800px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -55,19 +90,20 @@
             display: inline-block;
             padding: 10px 20px;
             margin: 10px;
-            background-color: #3498db;
-            color: white;
+            background-color: #ff5722;
+            color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            font-size: 1.2em;
         }
 
         .btn:hover {
-            background-color: #2980b9;
+            background-color: #e64a19;
         }
 
         footer {
-            background-color: #2c3e50;
-            color: white;
+            background-color: #ffab00;
+            color: #fff;
             text-align: center;
             padding: 10px 0;
             position: fixed;
@@ -85,12 +121,16 @@
             .btn {
                 width: 80%;
                 padding: 15px;
-                font-size: 1.2em;
+                font-size: 1em;
             }
 
             section {
                 width: 90%;
                 padding: 15px;
+            }
+
+            .hero {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -98,10 +138,11 @@
 <body>
     <header>
         <h1>Fanta Maria di Leuca</h1>
+        <img src="https://www.example.com/logo.png" alt="Logo Fanta Maria di Leuca">
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#rules">Regole del Gioco</a></li>
+                <li><a href="#rules">Regole</a></li>
                 <li><a href="#dashboard">Dashboard</a></li>
                 <li><a href="#profile">Profilo</a></li>
                 <li><a href="#events">Eventi</a></li>
@@ -111,10 +152,14 @@
         </nav>
     </header>
     <main id="home">
+        <div class="hero">
+            Avventura Estiva a Santa Maria di Leuca!
+        </div>
         <section>
             <h2>Benvenuti a Fanta Maria di Leuca</h2>
-            <p>Unisciti a noi per un'avventura unica dove viaggiatori competono guadagnando bonus e malus basati sulle loro azioni durante il viaggio a Santa Maria di Leuca.</p>
-            <a href="#register" class="btn">Registrati ora</a>
+            <p>Partecipa a un'avventura estiva con i tuoi amici in Puglia! In questo gioco unico, 10 viaggiatori competono guadagnando punti attraverso bonus e malus basati su azioni e eventi durante il viaggio.</p>
+            <p>Scopri le regole, partecipa alla competizione e diventa il migliore dei viaggiatori!</p>
+            <a href="#register" class="btn">Registrati Ora</a>
             <a href="#login" class="btn">Accedi</a>
         </section>
     </main>
