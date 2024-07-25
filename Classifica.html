@@ -11,7 +11,7 @@
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('http://localhost:3333/sea-background.jpg') no-repeat center center fixed;
+            background: url('sea-background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #333;
             padding-bottom: 60px;
@@ -265,12 +265,12 @@
 </head>
 <body>
     <header>
-        <img src="http://localhost:3333/Duplina.png" alt="Logo Fanta Maria di Leuca">
+        <img src="Duplina.png" alt="Logo Fanta Maria di Leuca">
         <h1>Fanta Maria di Leuca</h1>
         <nav>
             <ul>
                 <li><a href="#leaderboard">Classifica</a></li>
-                <li><a href="regolamento.html">Regolamento</a></li>
+                <li><a href="Regolamento.html">Regolamento</a></li>
             </ul>
         </nav>
     </header>
@@ -288,7 +288,7 @@
     <script>
         async function loadScores() {
             try {
-                const response = await fetch('http://localhost:3333/Punteggi.json'); // Percorso del file JSON
+                const response = await fetch('Punteggi.json'); // Percorso del file JSON
                 if (!response.ok) throw new Error('Network response was not ok.');
                 
                 const data = await response.json();
