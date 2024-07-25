@@ -199,25 +199,56 @@
         }
 
         @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Added padding for better spacing */
+            }
+
+            header h1 {
+                font-size: 1.8em; /* Reduced size */
+            }
+
+            header nav ul li {
+                display: block; /* Stack items vertically */
+                margin: 10px 0;
+            }
+
+            header nav ul li a {
+                font-size: 1em; /* Reduced size */
+                padding: 8px 10px; /* Reduced padding */
+            }
+
+            .hero {
+                font-size: 1.2em; /* Reduced size */
+                height: 150px; /* Reduced height */
+                margin-bottom: 10px; /* Reduced margin */
+            }
+
+            section {
+                width: 100%; /* Full width */
+                padding: 10px; /* Reduced padding */
+            }
+
             .card {
                 width: 90%;
                 min-height: 200px;
             }
 
-            .hero {
-                font-size: 1.4em; /* Reduced size */
-                height: 150px; /* Reduced height */
+            .card-title {
+                font-size: 1.2em; /* Reduced size */
             }
 
-            section {
-                width: 90%;
-                padding: 15px;
+            .card-content {
+                padding: 15px; /* Reduced padding */
             }
 
             .btn-primary {
-                width: 80%;
-                padding: 12px;
+                width: 100%;
+                padding: 10px;
                 font-size: 1em;
+            }
+
+            footer {
+                font-size: 0.9em; /* Reduced size */
             }
         }
     </style>
