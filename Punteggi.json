@@ -5,52 +5,52 @@
             {"type": "Malus", "description": "Partecipante 1 ha perso tempo", "points": -5}
         ],
             "name": "la Boomer",
-            "profilePic": "http://localhost:3333/Ele.jpg",
+            "profilePic": "Ele.jpg",
             "history": []
         },
         {
             "name": "il Crossover",
-            "profilePic": "http://localhost:3333/Ale.jpg",
+            "profilePic": "Ale.jpg",
             "history": []
         },
         {
             "name": "la Diva",
-            "profilePic": "http://localhost:3333/Stillo.jpg",
+            "profilePic": "Stillo.jpg",
             "history": []
         }, 
         {
             "name": "la Mamma",
-            "profilePic": "http://localhost:3333/Costi.jpg",
+            "profilePic": "Costi.jpg",
             "history": []
         },
         {
             "name": "il Papà",
-            "profilePic": "http://localhost:3333/Paolo.jpg",
+            "profilePic": "Paolo.jpg",
             "history": []
         },
         {
             "name": "il Pepe",
-            "profilePic": "http://localhost:3333/Rosso.jpg",
+            "profilePic": "Rosso.jpg",
             "history": []
         },
         {
             "name": "la Pizzetta",
-            "profilePic": "http://localhost:3333/Ali.jpg",
+            "profilePic": "Ali.jpg",
             "history": []
         },
         {
             "name": "la Principessa",
-            "profilePic": "http://localhost:3333/Ema.jpg",
+            "profilePic": "Ema.jpg",
             "history": []
         },
         {
             "name": "la Sirena",
-            "profilePic": "http://localhost:3333/Fra.JPG",
+            "profilePic": "Fra.JPG",
             "history": []
         },
         {
             "name": "il Vulcano",
-            "profilePic": "http://localhost:3333/Vale.jpg",
+            "profilePic": "Vale.jpg",
             "history": []
         }
     ]
