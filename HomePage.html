@@ -3,168 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fanta Maria di Leuca</title>
+    <title>Fanta Maria di Leuca - Homepage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0f7fa;
-            color: #333;
-        }
-
-        header {
-            background-color: #ffab00;
+            background: url('http://localhost:3333/sea-background.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #fff;
-            padding: 15px 0;
             text-align: center;
-            position: relative;
             overflow: hidden;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-        }
-
-        header img {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 150px;
-            height: auto;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .hero {
-            background: url('https://www.example.com/santa-maria-di-leuca.jpg') no-repeat center center/cover;
-            height: 300px;
-            border-radius: 10px;
-            color: #fff;
+            height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 2em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            align-items: center;
+            position: relative;
         }
 
-        section {
-            background-color: #fff;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 800px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9); /* Sovrapposizione scura per oscurare il contenuto */
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease; /* Transizione più fluida */
         }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #ff5722;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
+        .logo-container {
+            cursor: pointer;
+            animation: logoPulse 2s infinite;
+            z-index: 20;
+        }
+
+        .logo-circle {
+            width: 220px; /* Dimensione del cerchio */
+            height: 220px; /* Dimensione del cerchio */
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8); /* Cerchio bianco semi-trasparente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+        }
+
+        .logo {
+            width: 220px; /* Dimensione del logo dentro il cerchio */
+            height: auto;
+            transition: transform 0.6s ease, box-shadow 0.3s ease;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .invite-text {
+            font-size: 1.8em;
+            color: #fff; /* Colore della scritta di invito */
+            font-family: 'Pacifico', cursive;
+            animation: textFadeIn 2s ease-in-out;
+            margin-top: 20px; /* Margine per distanziare il testo dal logo */
+        }
+
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 90%;
+            box-sizing: border-box;
+            z-index: 20;
+            transition: opacity 1s ease; /* Transizione per mostrare il contenuto */
+        }
+
+        .content h2 {
+            font-size: 3em;
+            font-family: 'Pacifico', cursive;
+            color: #0077b6;
+            margin: 0;
+        }
+
+        .content p {
+            font-size: 1.5em;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .btn-primary {
             font-size: 1.2em;
+            color: #fff;
+            background: #0077b6;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin: 10px;
         }
 
-        .btn:hover {
-            background-color: #e64a19;
+        .btn-primary:hover {
+            background-color: #00acc1;
         }
 
         footer {
-            background-color: #ffab00;
-            color: #fff;
+            background: rgba(255, 255, 255, 0.9);
+            color: #0077b6;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
+            border-top: 3px solid #00acc1;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
             position: fixed;
             width: 100%;
             bottom: 0;
         }
 
-        /* Stili per la visualizzazione mobile */
         @media (max-width: 600px) {
-            nav ul li {
-                display: block;
-                margin: 10px 0;
+            .logo-circle {
+                width: 200px;
+                height: 200px;
             }
 
-            .btn {
-                width: 80%;
-                padding: 15px;
-                font-size: 1em;
+            .logo {
+                width: 150px;
             }
 
-            section {
-                width: 90%;
-                padding: 15px;
+            .invite-text {
+                font-size: 1.2em;
             }
 
-            .hero {
-                font-size: 1.5em;
+            .content h2 {
+                font-size: 2.5em;
+            }
+
+            .content p {
+                font-size: 1.2em;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Fanta Maria di Leuca</h1>
-        <img src="https://www.example.com/logo.png" alt="Logo Fanta Maria di Leuca">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#rules">Regole</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#profile">Profilo</a></li>
-                <li><a href="#events">Eventi</a></li>
-                <li><a href="#community">Community</a></li>
-                <li><a href="#contact">Contatti</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main id="home">
-        <div class="hero">
-            Avventura Estiva a Santa Maria di Leuca!
+    <div class="overlay" id="overlay">
+        <div class="logo-container" id="logoContainer">
+            <div class="logo-circle">
+                <img src="http://localhost:3333/Duplina.png" alt="Logo Fanta Maria di Leuca" class="logo" id="logo">
+            </div>
+            <div class="invite-text">Entra</div>
         </div>
-        <section>
-            <h2>Benvenuti a Fanta Maria di Leuca</h2>
-            <p>Partecipa a un'avventura estiva con i tuoi amici in Puglia! In questo gioco unico, 10 viaggiatori competono guadagnando punti attraverso bonus e malus basati su azioni e eventi durante il viaggio.</p>
-            <p>Scopri le regole, partecipa alla competizione e diventa il migliore dei viaggiatori!</p>
-            <a href="#register" class="btn">Registrati Ora</a>
-            <a href="#login" class="btn">Accedi</a>
-        </section>
-    </main>
+    </div>
+
+    <div class="content" id="content">
+        <h2>Benvenuto su Fanta Maria di Leuca!</h2>
+        <p>Esplora la classifica e scopri chi sta dominando! Scopri i dettagli dei partecipanti e rimani aggiornato sui bonus e malus.</p>
+        <a href="classifica.html" class="btn-primary">Vedi Classifica</a>
+        <a href="regolamento.html" class="btn-primary">Regolamento</a>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Fanta Maria di Leuca. Tutti i diritti riservati.</p>
+        <p>&copy; 2024 Duplina - Fanta Maria di Leuca. Tutti i diritti riservati.</p>
     </footer>
+
+    <script>
+        document.getElementById('logo').addEventListener('click', function() {
+            document.getElementById('overlay').style.opacity = '0';
+            document.getElementById('content').style.display = 'block';
+            document.getElementById('content').style.opacity = '1';
+            document.body.style.overflow = 'auto';
+            setTimeout(() => {
+                document.getElementById('overlay').style.display = 'none';
+            }, 1000); // Ritardo per lasciare il tempo alla transizione
+        });
+    </script>
 </body>
 </html>
