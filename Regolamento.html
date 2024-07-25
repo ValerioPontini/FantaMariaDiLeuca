@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regolamento - Fanta Maria di Leuca</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('http://localhost:3333/sea-background.jpg') no-repeat center center/cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        header {
+            background: rgba(0, 119, 182, 0.8);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid #0077b6;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em; /* Reduced size */
+            font-family: 'Pacifico', cursive;
+            color: #fff;
+        }
+
+        header img {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            width: 120px;
+            height: auto;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0 0;
+            text-align: center;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            background-color: #0096c7;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #0077b6;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .hero {
+            background: url('http://localhost:3333/hero-background.jpg') no-repeat center center/cover;
+            height: 100px; /* Reduced height */
+            border-radius: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6em; /* Reduced size */
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+        }
+
+        section {
+            position: relative;
+            padding: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .card-stack {
+            position: relative;
+            width: 100%; /* Full width of the container */
+            max-width: 900px; /* Maximum width for large screens */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto; /* Center horizontally */
+            padding-bottom: 20px; /* Space for scrolling */
+            max-height: 800px; /* Set max-height to ensure cards fit within view */
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .card {
+            width: 350px; /* Increased width */
+            min-height: 250px; /* Increased min-height */
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative; /* Changed from absolute */
+            transition: transform 0.5s ease, z-index 0.5s ease;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 30px 0; /* Space between cards */
+        }
+
+        .card-content {
+            padding: 20px;
+            display: none;
+            text-align: left;
+            width: 100%;
+            box-sizing: border-box;
+            max-height: 0; /* Start with zero height */
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .card.open .card-content {
+            display: block;
+            max-height: 500px; /* Adjust based on content */
+            overflow: auto;
+        }
+
+        .card-title {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 1.5em;
+            color: #0077b6;
+            z-index: 1;
+        }
+
+        .card.open {
+            z-index: 10;
+            transform: scale(1.1) translateY(-30px); /* Adjusted transform */
+        }
+
+        .card:nth-child(1) { background-color: #ffebee; transform: translateY(0); }
+        .card:nth-child(2) { background-color: #e1f5fe; transform: translateY(-200px); }
+        .card:nth-child(3) { background-color: #e8f5e9; transform: translateY(-400px); }
+        .card:nth-child(4) { background-color: #fff3e0; transform: translateY(-600px); }
+        .card:nth-child(5) { background-color: #fce4ec; transform: translateY(-800px); }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #0077b6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #005f73;
+        }
+
+        footer {
+            background-color: #0077b6;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 5px solid #005f73;
+            position: relative;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 90%;
+                min-height: 200px;
+            }
+
+            .hero {
+                font-size: 1.4em; /* Reduced size */
+                height: 150px; /* Reduced height */
+            }
+
+            section {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .btn-primary {
+                width: 80%;
+                padding: 12px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fanta Maria di Leuca</h1>
+        <img src="http://localhost:3333/Duplina.png" alt="Logo Fanta Maria di Leuca">
+        <nav>
+            <ul>
+                <li><a href="classifica.html">Classifica</a></li>
+                <li><a href="regolamento.html">Regolamento</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="rules">
+        <div class="hero">
+            Regolamento del Gioco
+        </div>
+        <section>
+            <div class="card-container">
+                <div class="card-stack">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-title">Bonus</div>
+                        <div class="card-content">
+                            <p><strong>Chef:</strong> Il partecipante cucina per tutti <span>+10 punti</span>.</p>
+                            <p><strong>Tuffo:</strong> Il partecipante fa un tuffo <span>+5 punti</span>.</p>
+                            <p><strong> LavaPiatti:</strong> Il partecipante lava i piatti per tutti <span>+10 punti</span>.</p>
+                            <p><strong>Ultimo Posto:</strong> Il partecipante è l'ultimo in classifica <span>+30 punti</span>.</p>
+                            <p><strong>Bacio con Statua :</strong> Il partecipante si immortala mentre bacia una statua <span>+5 punti</span>.</p>
+                             <p><strong>Bacio con San Trifone :</strong> Il partecipante bacia San Trifone <span>+15 punti</span>.</p>
+                             <p><strong>Bonus San Trifone :</strong> Il concorrente rimorchia indiscutibilmente qualcuno <span>+20 punti</span>.</p>
+                             <p><strong>Vomito Cosciente:</strong> Il partecipante vomita coscientemente<span>+10 punti</span>.</p>
+                             <p><strong>Bonus Mare Fuori :</strong> Il partecipante rimorchia un partenopeo <span>+25 punti</span>.</p>
+                             <p><strong>Rimorchio internazionale :</strong> Il partecipante rimorchia una persona straniera <span>+30 punti</span>.</p>
+                             <p><strong>Bonus Tatuaggio :</strong> Il partecipante si fa un tatuaggio <span>+25 punti</span>.</p>
+                             <p><strong>Bonus Covid :</strong> Il partecipante prende il covid <span>+50 punti</span>.</p>
+                             <p><strong>Bonus Rissa :</strong> Il partecipante partecipa ad una rissa <span>+25 punti</span>.</p>
+                             <p><strong>Bonus Arresto :</strong> Il partecipante viene arrestato <span>+75 punti</span>.</p>
+                             <p><strong>Bonus Ospedale :</strong> Il partecipante va in ospedale <span>+20 punti</span>.</p>
+                             <p><strong>Bonus Priscilla :</strong> Al partecipante viene offerto qualcosa da uno sconosciuto <span>+15 punti</span>.</p>
+                             <p><strong>Bonus Scherzo :</strong> Il partecipante architetta uno scherzo per qualcuno, raddoppia se la vittima non fa parte del gruppo <span>+10 punti</span>.</p>
+                             <p><strong>Bonus Matrimonio :</strong> Il partecipante riceve una proposta di matrimonio <span>+30 punti</span>.</p>
+                             <p><strong>Bonus Smutandato :</strong> Il partecipante esce senza mutande <span>+20 punti</span>.</p>
+                             <p><strong>Bonus Meme :</strong> Il partecipante è autore del meme della vacanza<span>+20 punti</span>.</p>
+                             <p><strong>Bonus Santa Maria di Leuca :</strong> si scoprirà in loco<span>+20 punti</span>.</p>
+                             <p><strong>Bonus Mary Poppins :</strong> Il partecipante ha sempre tutto al momento giusto <span>+15 punti</span>.</p>
+                             <p><strong>Rimorchio over50 :</strong> Il partecipante rimorchia un over50 <span>+35 punti</span>.</p>
+                             <p><strong>Bagno di notte :</strong> Il partecipante fa il bagno di notte <span>+15 punti</span>.</p>
+                             <p><strong>Bagno Nudo :</strong> Il partecipante fa il bagno nudo <span>+20 punti</span>.</p>
+                             <p><strong>Outfit Matchati :</strong> Due concorrenti hanno gli outfit matchati <span>+10 punti</span>.</p>
+                             <p><strong>Outfit chiasmo:</strong> Due concorrenti sono vestiti a chiasmo <span>+10 punti</span>.</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-title">Malus</div>
+                        <div class="card-content">
+                            <p><strong>Malus Litigata:</strong> Il partecipante litiga con qualcuno, raddoppia se con un altro concorrente <span>-10 punti</span>.</p>
+                            <p><strong>Malus Stirata:</strong> Il partecipante collassa <span>-20 punti</span>.</p>
+                             <p><strong>Malus Febbre:</strong> Il partecipante ha la febbre <span>-15 punti</span>.</p>
+                              <p><strong>Vomito Inconscio:</strong> Il partecipante vomita inconsciamente <span>-35 punti</span>.</p>
+                               <p><strong>Malus Pianto:</strong> Il partecipante piange <span>-10 punti</span>.</p>
+                             <p><strong>Malus Disperso:</strong> Il partecipante si perde <span>-25 punti</span>.</p>
+                              <p><strong>Malus Top Model:</strong> Il partecipante passa più di 2 minuti a farsi le foto <span>-10 punti</span>.</p>
+                             <p><strong>Malus Distratto:</strong> Il partecipante si perde qualcosa di importante, anche eventi <span>-15 punti</span>.</p>
+                              <p><strong>Malus Dimenticato:</strong> Il partecipante dimentica i documenti <span>-25 punti</span>.</p>
+                             <p><strong>Malus Scherzo:</strong> Il partecipante è vittima di uno scherzo, raddoppia se lo scherzo è fatto da uno sconosciuto <span>-10 punti</span>.</p>
+                              <p><strong>Malus Posto di blocco:</strong> La macchina in cui si trova il partecipante è fermata ad un posto di blocco <span>-10 punti</span>.</p>
+                               <p><strong>Malus Ultimo a Svegliarsi:</strong> Il partecipante è l'ultimo a svegliarsi <span>-5 punti</span>.</p>
+                             <p><strong>Malus Scatarrata:</strong> Il partecipante ha la tosse cronica <span>-10 punti</span>.</p>
+                              <p><strong>Malus Cacciato:</strong> Il partecipante si fa cacciare da un posto <span>-25 punti</span>.</p>
+                             <p><strong>Malus Nemico degli Animali:</strong> Il partecipante viene ferito da una qualisasi specie animale <span>-20 punti</span>.</p>
+                             <p><strong>Malus Ritardatario:</strong> Il partecipante è l'ultimo ad essere pronto <span>-5 punti</span>.</p>
+                              <p><strong>Malus UV:</strong> Il partecipante si brucia al sole <span>-10 punti</span>.</p>
+                             <p><strong>Malus No Sense:</strong> Il partecipante si sveglia in un posto diverso dal proprio letto <span>-30 punti</span>.</p>
+                              <p><strong>Malus Noioso:</strong> Il partecipante rimane a casa <span>-15 punti</span>.</p>
+                             <p><strong>Malus Indigesto:</strong> Il partecipante ha un'intossicazione alimentare <span>-20 punti</span>.</p>
+                             <p><strong>Malus Telefono:</strong> Il partecipante passa troppo tempo al telefono <span>-15 punti</span>.</p>
+                             <p><strong>Malus Cocci:</strong> Il partecipante rome qualcosa <span>-15 punti</span>.</p>
+                              <p><strong>Malus Farmacia:</strong> Il partecipante deve comprare qualcosa in farmacia <span>-10 punti</span>.</p>
+                             <p><strong>Malus Lamentoso:</strong> Il partecipante si lamenta eccessivamente <span>-15 punti</span>.</p>
+                              <p><strong>Malus Poraccio:</strong> Il partecipante rifiuta troppe proposte usando come scusa il prezzo <span>-10 punti</span>.</p>
+                             <p><strong>Malus Disorientamento:</strong> Il partecipante fa perdere il gruppo <span>-25 punti</span>.</p>
+
+                        </div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-title">Bonus Giornalieri</div>
+                        <div class="card-content">
+                            <p><strong>27/07, Bonus  Power:</strong> Il partecipante è carico per uscire nonostante il viaggio <span>+20 punti</span>.</p>
+                             <p><strong>28/07, Bonus  Pizzicato:</strong> Il partecipante balla la pizzica <span>+20 punti</span>.</p>
+                              <p><strong>29/07, Bonus  Tipico:</strong> Il partecipante mangia un prodotto tipico locale <span>+20 punti</span>.</p>
+                             <p><strong>30/07, Bonus  Generoso:</strong> Il partecipante offre qualcosa a qualcuno, raddoppia se a uno sconosciuto <span>+20 punti</span>.</p>
+                              <p><strong>31/07, Bonus  Floreale:</strong> Il partecipante indossa un fiore per almeno un'ora <span>+20 punti</span>.</p>
+                             <p><strong>01/08, Bonus  Fiero:</strong> Il partecipante ha la scritta "Duplina 2k24" visibile sul corpo durante la serata <span>+20 punti</span>.</p>
+                              <p><strong>02/08, Bonus  Trovatore d'Oro:</strong> Il partecipante trova almeno due conchiglie o simili in spiaggia  <span>+20 punti</span>.</p>
+                              <p><strong>03/08, Bonus  Ricordo:</strong> Il partecipante indossa un ricordo della vacanza <span>+20 punti</span>.</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-title">Bonus Personali</div>
+                        <div class="card-content">
+                            <p><strong>Bonus Boomer Poliglotta:</strong> <span>+50 punti</span>.</p>
+                            <p><strong>Bonus Crossover al Pomodoro:</strong> <span>+50 punti</span>.</p>
+                            <p><strong>Bonus Papà da sport acquatici:</strong> <span>+50 punti</span>.</p>
+                            <p><strong>Bonus Sirena Stonata:</strong> <span>+50 punti</span>.</p>
+                            <p><strong>Bonus Principessa Insabbiata:</strong> <span>+50 punti</span>.</p>
+                            <p><strong>Bonus Pepe senza Scelta:</strong> <span>+50 punti</span>.</p>
+                            <p><strong>Bonus Diva senza Ugola:</strong> <span>+50 punti</span>.</p>
+                            <p><strong>Bonus Vulcano Spento:</strong> <span>+50 punti</span>.</p>
+                            <p><strong>Bonus Mamma Pessima:</strong> <span>+50 punti</span>.</p>
+                            <p><strong>Bonus Pizzetta della Crusca:</strong> <span>+50 punti</span>.</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-title">Malus Personali</div>
+                        <div class="card-content">
+                            <p><strong>Malus Boomer Narcisista:</strong>  <span>da -40 punti a -5 punti</span>.</p>
+                            <p><strong>Malus Crossover Glitterata:</strong>  <span>da -40 punti a -5 punti</span>.</p>
+                            <p><strong>Malus Papà Calcistico:</strong>  <span>da -40 punti a -5 punti</span>.</p>
+                            <p><strong>Malus Sirena Assetata:</strong>  <span>da -40 punti a -5 punti</span>.</p>
+                            <p><strong>Malus Principessa Inutile:</strong>  <span>da -40 punti a -5 punti</span>.</p>
+                            <p><strong>Malus Pepe GymBro:</strong>  <span>da -40 punti a -5 punti</span>.</p>
+                            <p><strong>Malus Diva Omofoba:</strong>  <span>da -40 punti a -5 punti</span>.</p>
+                            <p><strong>Malus Vulcano Eruttante:</strong>  <span>da -40 punti a -5 punti</span>.</p>
+                            <p><strong>Malus Mamma Accaldata:</strong>  <span>da -40 punti a -5 punti</span>.</p>
+                            <p><strong>Malus Pizzetta Gattara:</strong>  <span>da -40 punti a -5 punti</span>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html" class="btn-primary">Torna alla Home</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Duplina - Fanta Maria di Leuca. Tutti i diritti riservati.</p>
+    </footer>
+    <script>
+        function toggleCard(card) {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(c => {
+                if (c !== card) {
+                    c.classList.remove('open');
+                }
+            });
+            card.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
+
