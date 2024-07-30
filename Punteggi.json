@@ -6,52 +6,87 @@
         ],
             "name": "la Boomer",
             "profilePic": "Ele.jpg",
-            "history": []
+            "history": [{"type": "Bonus", "description": "Bonus Giornaliero 27/07", "points": 20},
+            {"type": "Bonus", "description": "Bonus Giornaliero 29/07", "points": 20},
+            {"type": "Bonus", "description": "Bonus Giornaliero 30/07", "points": 20},
+            {"type": "Malus", "description": "Pianto", "points": -10},
+            {"type": "Malus", "description": "Farmacia", "points": -10},
+            {"type": "Malus", "description": "Malus Personale", "points": -35}]
         },
         {
             "name": "il Crossover",
             "profilePic": "Ale.jpg",
-            "history": []
+            "history": [{"type": "Bonus", "description": "Bonus Giornaliero 27/07", "points": 20},
+            {"type": "Bonus", "description": "Bonus Giornaliero 29/07", "points": 20},
+            {"type": "Malus", "description": "Noioso", "points": -15},
+            {"type": "Bonus", "description": "Smutandata", "points": 20},
+            {"type": "Malus", "description": "Malus Personale", "points": -30}]
         },
         {
             "name": "la Diva",
             "profilePic": "Stillo.jpg",
-            "history": []
+            "history": [{"type": "Bonus", "description": "Bonus Giornaliero 27/07", "points": 20},
+            {"type": "Bonus", "description": "Bonus Giornaliero 29/07", "points": 20},
+            {"type": "Bonus", "description": "San Trifone", "points": 20},
+            {"type": "Malus", "description": "Malus Pianto", "points": -10}
+            ]
         }, 
         {
             "name": "la Mamma",
             "profilePic": "Costi.jpg",
-            "history": []
+            "history": [{"type": "Bonus", "description": "Bonus Giornaliero 27/07", "points": 20},
+            {"type": "Bonus", "description": "Bonus Giornaliero 29/07", "points": 20},
+            {"type": "Malus", "description": "Ultima a svegliarsi", "points": -5},
+            {"type": "Bonus", "description": "Lava i piatti", "points": 10},
+            {"type": "Bonus", "description": "Cucina", "points": 10},
+            {"type": "Bonus", "description": "Chiasmo", "points": 10}]
         },
         {
             "name": "il Papà",
             "profilePic": "Paolo.jpg",
-            "history": []
+            "history": [{"type": "Bonus", "description": "Bonus Giornaliero 27/07", "points": 20},
+            {"type": "Bonus", "description": "Bonus Giornaliero 29/07", "points": 20},
+            {"type": "Bonus", "description": "Lava i piatti", "points": 10},
+            {"type": "Malus", "description": "Malus personale", "points": -35}]
         },
         {
             "name": "il Pepe",
             "profilePic": "Rosso.jpg",
-            "history": []
+            "history": [{"type": "Bonus", "description": "Bonus Giornaliero 27/07", "points": 20},
+            {"type": "Bonus", "description": "Bonus Giornaliero 29/07", "points": 20},
+            {"type": "Bonus", "description": "Tuffo", "points": 5},
+            {"type": "Bonus", "description": "Chiasmo", "points": 10},
+            {"type": "Malus", "description": "Malus personale", "points": -35}]
         },
         {
             "name": "la Pizzetta",
             "profilePic": "Ali.jpg",
-            "history": []
+            "history": [
+            {"type": "Bonus", "description": "Bonus Giornaliero 29/07", "points": 20},
+            {"type": "Malus", "description": "Malus Noiosa", "points": -15},
+            {"type": "Malus", "description": "Ultima a Svegliarsi", "points": -5}]
         },
         {
             "name": "la Principessa",
             "profilePic": "Ema.jpg",
-            "history": []
+            "history": [{"type": "Bonus", "description": "Bonus Giornaliero 27/07", "points": 20},
+            {"type": "Bonus", "description": "Bonus Giornaliero 29/07", "points": 20},
+             {"type": "Malus", "description": "Ultima a Svegliarsi", "points": -5}]
         },
         {
             "name": "la Sirena",
             "profilePic": "Fra.JPG",
-            "history": []
+            "history": [{"type": "Bonus", "description": "Bonus Giornaliero 27/07", "points": 20},
+            {"type": "Bonus", "description": "Bonus Giornaliero 29/07", "points": 20},
+            {"type": "Bonus", "description": "Tuffo", "points": 5}, 
+            {"type": "Bonus", "description": "Bonus personale", "points": 50}]
         },
         {
             "name": "il Vulcano",
             "profilePic": "Vale.jpg",
-            "history": []
+            "history": [{"type": "Bonus", "description": "Bonus Giornaliero 27/07", "points": 20},
+            {"type": "Bonus", "description": "Bonus Giornaliero 29/07", "points": 20},
+            {"type": "Bonus", "description": "Tuffo", "points": 5}]
         }
     ]
 }
